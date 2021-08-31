@@ -13,9 +13,9 @@ ht=100
 
 print("when entering degredation use X.XX format")  
 
-#Have the user enter their degredation figures after test laps
+#Have the user enter their degredation figures after a test lap for each type of tire. 
 
-laps = int(input("How many laps to show?"))
+laps = int(input("How many laps to show?"))             #how many laps in the race?
 ss = float(input("What is the degredation on SuperSoft tires?"))
 s = float(input("on Softs?"))
 m = float(input("on Medium?"))
@@ -27,7 +27,7 @@ print("Here's your expected tire life after each lap")
 
 lapcount = 1
 
-while laps > 1:
+while laps > 1:                 #multiply tire-left * degredation, subtract that amount from tire-left
     ssdeg = sst * ss
     sst = sst - ssdeg
 
@@ -44,7 +44,7 @@ while laps > 1:
     
 
     
-
+    #print the expected tire life after X laps, ':<5' used for formatting
     print("AFTER LAP: {:<5}   SST:{:<5}   ST:{:<5}   MT:{:<5}   HT:{:<5}".format(lapcount, round(sst, 1), round(st, 1), round(mt, 1),  round(ht, 1)))
     laps -= 1
     lapcount += 1
